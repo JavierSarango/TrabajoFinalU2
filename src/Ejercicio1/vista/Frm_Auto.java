@@ -5,9 +5,10 @@
 package Ejercicio1.vista;
 
 import Ejercicio1.controlador.Vehiculos.AutoController;
+import Ejercicio1.controlador.Vehiculos.MarcaController;
+import Ejercicio1.modelo.Marca;
 import javax.swing.JOptionPane;
-import Ejercicio1.vista.ModeloTabla.TablaAutos; 
-import controlador.tda.lista.ListaEnlazadaServices;
+import Ejercicio1.vista.ModeloTabla.TablaAutos;
 
 /**
  *
@@ -16,6 +17,7 @@ import controlador.tda.lista.ListaEnlazadaServices;
 public class Frm_Auto extends javax.swing.JFrame {
 
     private AutoController ac = new AutoController();
+    private MarcaController mc = new MarcaController();
     private TablaAutos tablaAutos = new TablaAutos();
     private Integer fila = -1;
 
@@ -38,15 +40,29 @@ public class Frm_Auto extends javax.swing.JFrame {
         txtPlaca.setText("");
         txtPrecio.setText("");
         cargarTabla();
+        cargarCBoxMarca();
         ac.setAuto(null);
-        
-         
+
     }
+
+    public void cargarCBoxMarca() {
+        cbxMarca.removeAllItems();
+        for (int i = 0; i < mc.listado().getSize(); i++) {
+            cbxMarca.addItem(mc.getListaMarca().obtenerDato(i).getNombre());
+        }
+        cbxMarca.updateUI();
+    }
+
+  public Marca obtenerMarca(){
+      
+      return mc.getListaMarca().obtenerDato(cbxMarca.getSelectedIndex());  
+  }
 
     public void guardar() {
         if (txtPlaca.getText().trim().isEmpty() || txtPrecio.getText().trim().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Llene los campos vacíos", "ERROR", JOptionPane.ERROR_MESSAGE);
         } else {
+            ac.getAuto().setMarca(obtenerMarca());
             ac.getAuto().setPlaca(txtPlaca.getText().trim());
             ac.getAuto().setPrecio(Double.parseDouble(txtPrecio.getText().trim()));
             ac.getAuto().setColor(String.valueOf(cbxColor.getSelectedItem()));
@@ -60,8 +76,6 @@ public class Frm_Auto extends javax.swing.JFrame {
         }
 
     }
-    
-    
 
     public void modificar() {
         if (txtPlaca.getText().trim().isEmpty() || txtPrecio.getText().trim().isEmpty()) {
@@ -141,14 +155,9 @@ public class Frm_Auto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Marca:");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(40, 30, 58, 17);
+        jLabel1.setBounds(40, 30, 58, 20);
 
         cbxMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbxMarca.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxMarcaActionPerformed(evt);
-            }
-        });
         jPanel2.add(cbxMarca);
         cbxMarca.setBounds(110, 30, 110, 28);
 
@@ -208,7 +217,7 @@ public class Frm_Auto extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButtonRegistrar);
-        jButtonRegistrar.setBounds(40, 30, 90, 30);
+        jButtonRegistrar.setBounds(20, 30, 90, 30);
 
         jButtonModificar.setText("Modificar");
         jButtonModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +226,7 @@ public class Frm_Auto extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButtonModificar);
-        jButtonModificar.setBounds(150, 30, 100, 30);
+        jButtonModificar.setBounds(130, 30, 100, 30);
 
         jButton1.setText("Dar de Baja");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +235,7 @@ public class Frm_Auto extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton1);
-        jButton1.setBounds(270, 30, 100, 30);
+        jButton1.setBounds(250, 30, 100, 30);
 
         jButton2.setText("Gestión Marcas");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +244,7 @@ public class Frm_Auto extends javax.swing.JFrame {
             }
         });
         jPanel4.add(jButton2);
-        jButton2.setBounds(390, 30, 132, 30);
+        jButton2.setBounds(361, 30, 150, 30);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -290,16 +299,12 @@ public class Frm_Auto extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void cbxMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxMarcaActionPerformed
-        // TODO add your handling code here:
-         
-    }//GEN-LAST:event_cbxMarcaActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Frm_Marcas marca = new Frm_Marcas();
-        this.setVisible(false);
+        this.dispose();
         marca.setVisible(true);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

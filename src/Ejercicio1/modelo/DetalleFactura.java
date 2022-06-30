@@ -6,7 +6,7 @@
 package Ejercicio1.modelo;
 
 import java.util.Date;
-import modelo.Cliente;
+import Ejercicio1.modelo.Cliente;
 
 /**
  *

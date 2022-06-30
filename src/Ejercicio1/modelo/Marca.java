@@ -45,6 +45,13 @@ public class Marca {
     public void setTipoPrecio(String tipoPrecio) {
         this.tipoPrecio = tipoPrecio;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " " + colorMarca + " " + tipoPrecio + " ";
+    }
+    
+    
     
     
 }

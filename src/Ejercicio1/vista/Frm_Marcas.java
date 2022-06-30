@@ -87,23 +87,23 @@ public class Frm_Marcas extends javax.swing.JFrame {
 
         jLabel1.setText("Nombre de Marca:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(40, 30, 120, 18);
+        jLabel1.setBounds(30, 30, 120, 30);
 
         jLabel3.setText("Color Distintivo:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(40, 70, 102, 18);
+        jLabel3.setBounds(30, 70, 120, 30);
 
         jLabel2.setText("Rango de Precios:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 110, 140, 18);
+        jLabel2.setBounds(30, 110, 140, 30);
         jPanel1.add(txt_regMarca);
-        txt_regMarca.setBounds(190, 30, 190, 24);
+        txt_regMarca.setBounds(190, 30, 190, 30);
         jPanel1.add(txt_color);
-        txt_color.setBounds(190, 70, 190, 24);
+        txt_color.setBounds(190, 70, 190, 30);
 
         cbx_precios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Económicos", "Normal", "Lujo" }));
         jPanel1.add(cbx_precios);
-        cbx_precios.setBounds(190, 110, 190, 24);
+        cbx_precios.setBounds(190, 110, 190, 30);
 
         jButton1.setText("GUARDAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class Frm_Marcas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(80, 150, 120, 24);
+        jButton1.setBounds(80, 150, 120, 22);
 
         jButton2.setText("SALIR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class Frm_Marcas extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(220, 150, 120, 24);
+        jButton2.setBounds(220, 150, 120, 22);
 
         tbl_marca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,12 +137,12 @@ public class Frm_Marcas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tbl_marca);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 200, 360, 130);
+        jScrollPane1.setBounds(10, 200, 430, 220);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 10, 430, 380);
+        jPanel1.setBounds(10, 10, 450, 430);
 
-        setSize(new java.awt.Dimension(462, 428));
+        setSize(new java.awt.Dimension(484, 466));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

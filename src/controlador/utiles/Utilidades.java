@@ -8,6 +8,7 @@ package controlador.utiles;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import Ejercicio2.modelo.enums.TipoBien;
 
 
 /**
@@ -141,7 +142,15 @@ public class Utilidades {
         arr[0] = Character.toUpperCase(arr[0]);//apellido ---> Apellido
         return new String(arr);
     }
-    
+     public static String[] tipos() {
+        String[] aux = new String[  TipoBien.values().length];
+        int cont = 0;
+        for (TipoBien tipobien : TipoBien.values()) {
+            aux[cont] = tipobien.toString();
+            cont++;
+        }
+        return aux;
+    }
     
     
 }

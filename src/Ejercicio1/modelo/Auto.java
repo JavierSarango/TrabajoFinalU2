@@ -9,10 +9,12 @@ package Ejercicio1.modelo;
  * @author Gigabyte
  */
 public class Auto {
+
     private Integer id;
     private String placa;
     private String color;
     private Double precio;
+    private Marca marca;
 
     public Integer getId() {
         return id;
@@ -45,6 +47,17 @@ public class Auto {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-    
-    
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
+    @Override
+    public String toString() {
+        return placa + " ";
+    }
 }
