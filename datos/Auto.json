@@ -1,1 +1,1 @@
-{"lista":{"size":0}}
+{"lista":{"cabecera":{"dato":{"@class":"Ejercicio1.modelo.Auto","id":1,"placa":"QWD465","color":"Azul","precio":50},"siguiente":{"dato":{"@class":"Ejercicio1.modelo.Auto","placa":"qwd956","color":"Azul","precio":852}}},"size":2}}

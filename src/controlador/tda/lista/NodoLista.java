@@ -5,10 +5,10 @@
  */
 package controlador.tda.lista;
 
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+//import javax.xml.bind.annotation.XmlAnyElement;
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlType;
 
 /**
  *
@@ -32,7 +32,7 @@ public class NodoLista <E> {
         siguiente = null;
     }
     
-    @XmlAnyElement(lax = true)
+//    @XmlAnyElement(lax = true)
     public E getDato() {
         return dato;
     }
@@ -40,7 +40,7 @@ public class NodoLista <E> {
     public void setDato(E dato) {
         this.dato = dato;
     }
-    @XmlElement
+//    @XmlElement
     public NodoLista<E> getSiguiente() {
         return siguiente;
     }

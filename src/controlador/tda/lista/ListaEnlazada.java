@@ -12,8 +12,8 @@ import controlador.utiles.TipoOrdenacion;
 import static controlador.utiles.Utilidades.getMethod;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 
 
 /**
@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author sebastian
  */
 //E   T    K   V
-//E = T
-@XmlRootElement
+////E = T
+//@XmlRootElement
 
 public class ListaEnlazada<E> {
 
@@ -30,7 +30,7 @@ public class ListaEnlazada<E> {
 
     private Integer size;
 
-    @XmlElement
+//    @XmlElement
     public NodoLista<E> getCabecera() {
         return cabecera;
     }
