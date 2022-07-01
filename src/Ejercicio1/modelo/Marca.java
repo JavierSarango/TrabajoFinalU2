@@ -48,7 +48,7 @@ public class Marca {
 
     @Override
     public String toString() {
-        return nombre + " " + colorMarca + " " + tipoPrecio + " ";
+        return nombre + " ";
     }
     
     

@@ -51,7 +51,7 @@ public class TablaAutos extends AbstractTableModel {
         Auto auto = lista.obtenerDato(arg0);
         switch(arg1) {
             case 0: return (arg0+1);
-            case 1: return auto.getMarca().getNombre();
+            case 1: return auto.getMarca();
             case 2: return auto.getColor();
             case 3: return auto.getPrecio();
             case 4: return auto.getPlaca();            
