@@ -72,7 +72,7 @@ public class Frm_Inmueble extends javax.swing.JDialog {
 
      public void guardar() throws ExceptionInInitializerError {
 
-          if (!validar()) {
+         
                ic.getInmueble().setId(id_inmueble);
                ic.getInmueble().setNro_Registro(txtregistro.getText());
                ic.getInmueble().setUbicacion(txtubi.getText());
@@ -86,7 +86,7 @@ public class Frm_Inmueble extends javax.swing.JDialog {
                CargarTabla();
                Limpiar();
 
-          }
+          
 
      }
 
